@@ -1,0 +1,51 @@
+{
+	"Static": [
+		{
+			"LineRef": "STIF:Line::C01795:",
+			"LineName": "LightTrain8",
+			"StopRef": "STIF:StopPoint:Q:42131:",
+			"StopName": "Jean Vilar",
+			"Destination": "Saint-Denis",
+			"Color": "6E6E00",
+			"WalkTime": "3"
+		}
+	],
+	"Dynamic": [
+		{
+			"LineRef": "STIF:Line::C01795:",
+			"LineName": "LightTrain8",
+			"StopRef": "STIF:StopPoint:Q:42128:",
+			"StopName": "Jean Vilar",
+			"Destination": "Villetaneuse",
+			"Color": "6E6E00",
+			"WalkTime": "3"
+		},
+		{
+			"LineRef": "STIF:Line::C01999:",
+			"LineName": "LightTrain11",
+			"StopRef": "STIF:StopPoint:Q:472820:",
+			"StopName": "Villetaneuse - Université",
+			"Destination": "Épinay-sur-Seine",
+			"Color": "ff5a00",
+			"WalkTime": "12"
+		},
+		{
+			"LineRef": "STIF:Line::C01999:",
+			"LineName": "LightTrain11",
+			"StopRef": "STIF:StopPoint:Q:470851:",
+			"StopName": "Villetaneuse - Université",
+			"Destination": "Le Bourget",
+			"Color": "ff5a00",
+			"WalkTime": "12"
+		},
+		{
+			"LineRef": "STIF:Line::C01999:",
+			"LineName": "LightTrain11",
+			"StopRef": "STIF:StopPoint:Q:470851:",
+			"StopName": "Villetaneuse - Université",
+			"Destination": "Le Bourget",
+			"Color": "ff5a00",
+			"WalkTime": "3"
+		}
+	]
+}

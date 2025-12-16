@@ -1,0 +1,8 @@
+.Page {
+	font-family: Arial, sans-serif;
+	background-color: #25303b;
+	display: flex;
+	width: 1920px;
+	height: 1080px;
+	flex-wrap: wrap;
+}

@@ -1,0 +1,25 @@
+@font-face {
+	font-family: 'Bold';
+	src: url('/assets/fonts/ParisineBold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Regular';
+	src: url('/assets/fonts/ParisineRegular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Regular';
+	font-size: 20pt;
+}
+
+body {
+	background-color: darkgrey;
+}
