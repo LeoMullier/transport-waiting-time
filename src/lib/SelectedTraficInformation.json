@@ -2,10 +2,21 @@
 	{
 		"LineRef": "STIF:Line::C01795:",
 		"LineName": "LightTrain8",
-		"StopRef": "STIF:StopPoint:Q:42131:",
-		"StopName": "Jean Vilar",
-		"Destination": "Saint-Denis",
-		"Color": "6E6E00",
-		"WalkTime": "3"
+		"Color": "6E6E00"
+	},
+	{
+		"LineRef": "STIF:Line::C01999:",
+		"LineName": "LightTrain11",
+		"Color": "ff5a00"
+	},
+	{
+		"LineRef": "STIF:Line::C01795:",
+		"LineName": "LightTrain8",
+		"Color": "6E6E00"
+	},
+	{
+		"LineRef": "STIF:Line::C01999:",
+		"LineName": "LightTrain11",
+		"Color": "ff5a00"
 	}
 ]

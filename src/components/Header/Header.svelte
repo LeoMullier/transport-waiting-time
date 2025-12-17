@@ -7,15 +7,11 @@
 <div class="Header">
 	<div class="Icons">
 		<img
-			src="/assets/images/Logo{MainTransportType}.svg"
-			alt="Logo af a light train"
+			src="/assets/images/LogoIDFM.svg"
+			alt="Logo of Île de France Mobilité company."
 			class="Icon"
 		/>
-		<img
-			src="/assets/images/Logo{MainTransportType + MainTransportLine}.svg"
-			alt="Logo of T8 light train"
-			class="Icon"
-		/>
+		<img src="/assets/images/LogoStadium1.svg" alt="Logo of a stadium." class="Icon" />
 	</div>
 	<div class="StationName">{StationName}</div>
 </div>
@@ -30,7 +26,7 @@
 	}
 
 	.Icons {
-		margin: 0 60px 0 60px;
+		margin: 0 25px 0 50px;
 	}
 
 	.Icon {

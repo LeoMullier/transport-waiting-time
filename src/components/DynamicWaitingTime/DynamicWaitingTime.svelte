@@ -1,16 +1,68 @@
 <script>
+	// import depedencies
+	import { onMount } from 'svelte';
+
+	// Import files
+	import IdfmPrimToken from '$lib/IdfmPrimToken.json';
+
 	// Import components
 	import TimesValues from '../TimesValues/TimesValues.svelte';
 
 	// Export props
 	let { LineRef, LineName, StopRef, StopName, Destination, Color, WalkTime, Height } = $props();
+
+	// Initialise variables
+	let Query =
+		'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=' +
+		encodeURIComponent(StopRef) +
+		'&LineRef=' +
+		encodeURIComponent(LineRef);
+	let QueryResponse = null;
+	let WaitingTimes = $state([]);
+
+	onMount(async () => {
+		try {
+			// Call to waiting times API
+			const response = await fetch(Query, {
+				method: 'GET',
+				headers: {
+					Accept: 'application/json',
+					apikey: IdfmPrimToken.Token
+				}
+			});
+			if (!response.ok) {
+				throw new Error(
+					`[!] An error has occured while establishing connexion with API. Status HTTP${response.status}`
+				);
+			}
+			// Receive response from waiting times API
+			const ResponseData = await response.json();
+			// Convert absolute dates and times to delay from current time
+			for (let i = 0; i < 2; i++) {
+				let RawWaitingTime = new Date(
+					ResponseData.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[i]
+						.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
+				);
+				let Now = new Date();
+				let Time = Math.floor((RawWaitingTime - Now) / 60000);
+				if (Time < 1) {
+					Time = 0;
+				}
+				WaitingTimes = [...WaitingTimes, Time];
+			}
+		} catch (error) {
+			console.log(
+				'[!] An error has occured while establishing connexion with API or parsing its response. ',
+				error.message
+			);
+		}
+	});
 </script>
 
 <div class="Line" style="height: {Height}px;">
-	<div class="SideBar" style="background-color:#{Color}"></div>
-	<div class="Description">
-		<div class="Destination">{Destination}</div>
+	<div class="SideBar" style="background-color: #{Color}"></div>
 
+	<div class="Description">
 		{#if WalkTime !== '0'}
 			<div class="Icons">
 				<img
@@ -22,8 +74,11 @@
 				<div class="WalkTime">{WalkTime} min</div>
 			</div>
 		{/if}
+
+		<div class="Destination">{Destination}</div>
 	</div>
-	<TimesValues Values="12" />
+
+	<TimesValues Values={WaitingTimes} />
 </div>
 
 <style>
@@ -36,7 +91,7 @@
 		align-items: center;
 		gap: 25px;
 		margin-bottom: 25px;
-		transition: margin-top 1s ease-in-out;
+		transition: margin-top 0.75s ease-in-out;
 	}
 
 	.SideBar {

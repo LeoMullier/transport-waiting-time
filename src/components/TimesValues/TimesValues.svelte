@@ -1,13 +1,18 @@
 <script>
-	export let Values;
+	// Export props
+	let { Values } = $props();
 </script>
 
 <div class="Values">
-	<div class="Value">{Values[0]}</div>
-	{#each Values.slice(1) as ValuesItem}
+	{#if Values.length === 0}
+		<div class="Value">-</div>
 		<div class="ValuesSeparator"></div>
-		<div class="Value">{ValuesItem}</div>
-	{/each}
+		<div class="Value">-</div>
+	{:else}
+		<div class="Value">{Values[0]}</div>
+		<div class="ValuesSeparator"></div>
+		<div class="Value">{Values[1] ?? '-'}</div>
+	{/if}
 </div>
 
 <style>

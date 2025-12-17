@@ -6,12 +6,7 @@
 </script>
 
 <div class="Page">
-	<Header
-		MainTransportType="LightTrain"
-		MainTransportLine="8"
-		StationName="Saint-Denis - Porte de Paris"
-		;
-	/>
+	<Header MainTransportType="LightTrain" MainTransportLine="8" StationName="Stade de France" ; />
 
 	<WaitingTimesPanel />
 

@@ -1,4 +1,7 @@
 <script>
+	// import depedencies
+	import { onMount } from 'svelte';
+
 	// Import files
 	import IdfmPrimToken from '$lib/IdfmPrimToken.json';
 
@@ -15,9 +18,9 @@
 		'&LineRef=' +
 		encodeURIComponent(LineRef);
 	let QueryResponse = null;
-	let WaitingTimes = null;
+	let WaitingTimes = $state([]);
 
-	$effect(async () => {
+	onMount(async () => {
 		try {
 			// Call to waiting times API
 			const response = await fetch(Query, {
@@ -32,21 +35,20 @@
 					`[!] An error has occured while establishing connexion with API. Status HTTP${response.status}`
 				);
 			}
-
 			// Receive response from waiting times API
-			ResponseData = await response.json();
-
+			const ResponseData = await response.json();
 			// Convert absolute dates and times to delay from current time
-			for (let i = 0; i < ResponseData.length; i++) {
-				let RawWaitingTime =
-					ResponseData[i].Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0]
-						.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
-				Now = new Date();
-
-				WaitingTimes[i] = Math.floor((RawWaitingTime - Now) / 60000);
-				if (WaitingTimes[i] < 1) {
-					WaitingTimes[i] = 0;
+			for (let i = 0; i < 2; i++) {
+				let RawWaitingTime = new Date(
+					ResponseData.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[i]
+						.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
+				);
+				let Now = new Date();
+				let Time = Math.floor((RawWaitingTime - Now) / 60000);
+				if (Time < 1) {
+					Time = 0;
 				}
+				WaitingTimes = [...WaitingTimes, Time];
 			}
 		} catch (error) {
 			console.log(
@@ -61,8 +63,6 @@
 	<div class="SideBar" style="background-color: #{Color}"></div>
 
 	<div class="Description">
-		<div class="Destination">{Destination}</div>
-
 		{#if WalkTime !== '0'}
 			<div class="Icons">
 				<img
@@ -74,9 +74,11 @@
 				<div class="WalkTime">{WalkTime} min</div>
 			</div>
 		{/if}
+
+		<div class="Destination">{Destination}</div>
 	</div>
 
-	<TimesValues Values="12" />
+	<TimesValues Values={WaitingTimes} />
 </div>
 
 <style>
