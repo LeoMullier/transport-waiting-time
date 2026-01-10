@@ -20,9 +20,9 @@
 	let QueryResponse = null;
 	let WaitingTimes = $state([]);
 
-	onMount(async () => {
+	async function FetchWaitingTimes() {
 		try {
-			// Call to waiting times API
+			// Call and response for waiting times API
 			const response = await fetch(Query, {
 				method: 'GET',
 				headers: {
@@ -35,27 +35,35 @@
 					`[!] An error has occured while establishing connexion with API. Status HTTP${response.status}`
 				);
 			}
-			// Receive response from waiting times API
 			const ResponseData = await response.json();
+
 			// Convert absolute dates and times to delay from current time
+			let NewWaitingTimes = [];
 			for (let i = 0; i < 2; i++) {
 				let RawWaitingTime = new Date(
 					ResponseData.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[i]
-						.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
+						.MonitoredVehicleJourney.MonitoredCall.ExpectedDepartureTime
 				);
 				let Now = new Date();
 				let Time = Math.floor((RawWaitingTime - Now) / 60000);
 				if (Time < 1) {
 					Time = 0;
 				}
-				WaitingTimes = [...WaitingTimes, Time];
+				NewWaitingTimes.push(Time);
 			}
+			WaitingTimes = NewWaitingTimes;
 		} catch (error) {
 			console.log(
 				'[!] An error has occured while establishing connexion with API or parsing its response. ',
 				error.message
 			);
 		}
+	}
+
+	onMount(async () => {
+		FetchWaitingTimes();
+		const interval = setInterval(FetchWaitingTimes, 15000);
+		return () => clearInterval(interval);
 	});
 </script>
 
@@ -66,7 +74,7 @@
 		{#if WalkTime !== '0'}
 			<div class="Icons">
 				<img
-					src="/assets/images/Logo{LineName}.svg"
+					src="/assets/images/Lines/Logo{LineName}.svg"
 					alt="Logo of {LineName} transport"
 					class="Icon"
 				/>

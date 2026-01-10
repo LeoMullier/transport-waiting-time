@@ -17,36 +17,36 @@
 	<div class="Clock">{ClockString}</div>
 	<div class="Tabs">
 		<div class="FirstTab">
-			<img class="FirstTabLine" src="/assets/images/LogoLightTrain8.svg" />
+			<img class="FirstTabLine" src="/assets/images/Lines/LogoLightTrain8.svg" />
 			<img class="FirstTabEvent" src="/assets/images/LogoTraficPerturbation.svg" />
 		</div>
 		<div class="OtherTabs">
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain8.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain8.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficPerturbation.svg" />
 			</div>
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain8.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain8.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficWorking.svg" />
 			</div>
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain8.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain8.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficNightWorking.svg" />
 			</div>
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain8.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain8.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficInformation.svg" />
 			</div>
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain11.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain11.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficWorking.svg" />
 			</div>
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain11.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain11.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficPerturbation.svg" />
 			</div>
 			<div class="OtherTab">
-				<img class="OtherTabLine" src="/assets/images/LogoLightTrain11.svg" />
+				<img class="OtherTabLine" src="/assets/images/Lines/LogoLightTrain11.svg" />
 				<img class="OtherTabEvent" src="/assets/images/LogoTraficNightWorking.svg" />
 			</div>
 		</div>
@@ -172,14 +172,14 @@
 		background-color: white;
 		border-bottom-left-radius: 25px;
 		border-bottom-right-radius: 25px;
-		border-bottom: 25px solid #6e6e00;
+		border-bottom: 25px solid #ff5a00;
 		position: relative;
 		padding: 50px 25px 25px 25px;
 		position: relative;
 	}
 
 	.ColorBarLeft {
-		background-color: #6e6e00;
+		background-color: #ff5a00;
 		height: 25px;
 		position: absolute;
 		top: 0;
@@ -189,7 +189,7 @@
 	}
 
 	.ColorBarRight {
-		background-color: #6e6e00;
+		background-color: #ff5a00;
 		height: 25px;
 		position: absolute;
 		top: 0;

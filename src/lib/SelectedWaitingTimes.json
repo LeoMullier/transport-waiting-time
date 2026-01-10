@@ -3,30 +3,30 @@
 		{
 			"LineRef": "STIF:Line::C01795:",
 			"LineName": "LightTrain8",
-			"StopRef": "STIF:StopPoint:Q:42131:",
-			"StopName": "Jean Vilar",
-			"Destination": "Saint-Denis",
+			"StopRef": "STIF:StopPoint:Q:42120:",
+			"StopName": "Saint-Denis - Porte de Paris",
+			"Destination": "Épinay Villetaneuse",
 			"Color": "6E6E00",
-			"WalkTime": "3"
+			"WalkTime": "10"
 		}
 	],
 	"Dynamic": [
 		{
-			"LineRef": "STIF:Line::C01795:",
-			"LineName": "LightTrain8",
-			"StopRef": "STIF:StopPoint:Q:42128:",
-			"StopName": "Jean Vilar",
-			"Destination": "Villetaneuse",
-			"Color": "6E6E00",
-			"WalkTime": "3"
+			"LineRef": "STIF:Line::C01383:",
+			"LineName": "Subway13",
+			"StopRef": "STIF:StopPoint:Q:463301:",
+			"StopName": "Saint-Denis - Porte de Paris",
+			"Destination": "Châtillon",
+			"Color": "82c8e6",
+			"WalkTime": "12"
 		},
 		{
-			"LineRef": "STIF:Line::C01999:",
-			"LineName": "LightTrain11",
-			"StopRef": "STIF:StopPoint:Q:472820:",
-			"StopName": "Villetaneuse - Université",
-			"Destination": "Épinay-sur-Seine",
-			"Color": "ff5a00",
+			"LineRef": "STIF:Line::C01383:",
+			"LineName": "Subway13",
+			"StopRef": "STIF:StopPoint:Q:22241:",
+			"StopName": "Saint-Denis - Porte de Paris",
+			"Destination": "Saint-Denis",
+			"Color": "82c8e6",
 			"WalkTime": "12"
 		},
 		{
@@ -39,13 +39,13 @@
 			"WalkTime": "12"
 		},
 		{
-			"LineRef": "STIF:Line::C01999:",
-			"LineName": "LightTrain11",
-			"StopRef": "STIF:StopPoint:Q:470851:",
-			"StopName": "Villetaneuse - Université",
-			"Destination": "Le Bourget",
+			"LineRef": "STIF:Line::C01384:",
+			"LineName": "Subway14",
+			"StopRef": "STIF:StopPoint:Q:490774:",
+			"StopName": "Saint-Denis - Pleyel",
+			"Destination": "Aéroport d'Orly",
 			"Color": "ff5a00",
-			"WalkTime": "3"
+			"WalkTime": "25"
 		}
 	]
 }
