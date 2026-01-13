@@ -9,7 +9,17 @@
 	import TimesValues from '../TimesValues/TimesValues.svelte';
 
 	// Export props
-	let { LineRef, LineName, StopRef, StopName, Destination, Color, WalkTime, Height } = $props();
+	let {
+		LineRef,
+		LineName,
+		StopRef,
+		StopName,
+		Destination,
+		Color,
+		WalkTime,
+		ShowDestination,
+		Height
+	} = $props();
 
 	// Initialise variables
 	let Query =
@@ -19,6 +29,7 @@
 		encodeURIComponent(LineRef);
 	let QueryResponse = null;
 	let WaitingTimes = $state([]);
+	let Destinations = $state([]);
 
 	async function FetchWaitingTimes() {
 		try {
@@ -39,19 +50,28 @@
 
 			// Convert absolute dates and times to delay from current time
 			let NewWaitingTimes = [];
+			let NewDestinations = [];
 			for (let i = 0; i < 2; i++) {
 				let RawWaitingTime = new Date(
 					ResponseData.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[i]
 						.MonitoredVehicleJourney.MonitoredCall.ExpectedDepartureTime
 				);
+				let RawDestination = '';
+				if (ShowDestination == '1') {
+					RawDestination =
+						ResponseData.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[i]
+							.MonitoredVehicleJourney.DestinationShortName[0].value;
+				}
 				let Now = new Date();
 				let Time = Math.floor((RawWaitingTime - Now) / 60000);
 				if (Time < 1) {
 					Time = 0;
 				}
 				NewWaitingTimes.push(Time);
+				NewDestinations.push(RawDestination);
 			}
 			WaitingTimes = NewWaitingTimes;
+			Destinations = NewDestinations;
 		} catch (error) {
 			console.log(
 				'[!] An error has occured while establishing connexion with API or parsing its response. ',
@@ -86,7 +106,7 @@
 		<div class="Destination">{Destination}</div>
 	</div>
 
-	<TimesValues Values={WaitingTimes} />
+	<TimesValues Values={WaitingTimes} Destination={Destinations} />
 </div>
 
 <style>

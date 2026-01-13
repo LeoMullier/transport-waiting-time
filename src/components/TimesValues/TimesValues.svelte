@@ -1,6 +1,6 @@
 <script>
 	// Export props
-	let { Values } = $props();
+	let { Values, Destination } = $props();
 </script>
 
 <div class="Values">
@@ -10,14 +10,41 @@
 		<div class="BadValue"><span>.</span><span>.</span><span>.</span></div>
 	{/if}
 	{#if Values.length === 1}
-		<div class="Value">{Values[0]}</div>
+		{#if Destination?.[0]}
+			<div class="ValueDestination">
+				<div class="Value">{Values[0]}</div>
+				<div class="Destination">{Destination[0]}</div>
+			</div>
+		{:else}
+			<div class="ValueDestination">
+				<div class="Value">{Values[0]}</div>
+			</div>
+		{/if}
 		<div class="ValuesSeparator"></div>
 		<div class="BadValue"><span>.</span><span>.</span><span>.</span></div>
 	{/if}
 	{#if Values.length === 2}
-		<div class="Value">{Values[0]}</div>
+		{#if Destination?.[0]}
+			<div class="ValueDestination">
+				<div class="Value ValueWithDestination">{Values[0]}</div>
+				<div class="Destination">{Destination[0]}</div>
+			</div>
+		{:else}
+			<div class="ValueDestination">
+				<div class="Value">{Values[0]}</div>
+			</div>
+		{/if}
 		<div class="ValuesSeparator"></div>
-		<div class="Value">{Values[1]}</div>
+		{#if Destination?.[0]}
+			<div class="ValueDestination">
+				<div class="Value ValueWithDestination">{Values[1]}</div>
+				<div class="Destination">{Destination[1]}</div>
+			</div>
+		{:else}
+			<div class="ValueDestination">
+				<div class="Value">{Values[1]}</div>
+			</div>
+		{/if}
 	{/if}
 </div>
 
@@ -33,15 +60,37 @@
 		height: calc(100% - (2 * 25px));
 	}
 
-	.Value {
+	.ValueDestination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: 100%;
+		flex-direction: column;
+		width: calc(0.5 * (100% - 2.5px));
+	}
+
+	.Value {
 		color: #f9c823;
 		font-family: 'Bold';
 		font-size: 100pt;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: calc(0.5 * (100% - 2.5px));
+	}
+
+	.ValueWithDestination {
+		margin-top: -20px;
+	}
+
+	.Destination {
+		color: white;
+		margin-top: -5px;
+		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: clip;
+		width: calc(100% - (2 * 12.5px));
+		font-size: 20pt;
 	}
 
 	.BadValue {

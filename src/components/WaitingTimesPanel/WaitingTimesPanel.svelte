@@ -17,7 +17,6 @@
 	let NumberDisplayedDynamicLines = NumberDisplayedLines - StaticWaitingLines.length;
 
 	// Calculate heights of static and dynamic lines
-
 	let HeightPanel = 880;
 	let HeightLine =
 		880 / NumberDisplayedLines - (25 * (NumberDisplayedLines + 1)) / NumberDisplayedLines;
@@ -72,6 +71,7 @@
 				Destination={StaticWaitingLinesItem.Destination}
 				Color={StaticWaitingLinesItem.Color}
 				WalkTime={StaticWaitingLinesItem.WalkTime}
+				ShowDestination={StaticWaitingLinesItem.ShowDestination}
 				Height={HeightLine}
 			/>
 		{/each}
@@ -86,6 +86,7 @@
 				Destination={DynamicWaitingLinesItem.Destination}
 				Color={DynamicWaitingLinesItem.Color}
 				WalkTime={DynamicWaitingLinesItem.WalkTime}
+				ShowDestination={DynamicWaitingLinesItem.ShowDestination}
 				Height={HeightLine}
 			/>
 		{/each}

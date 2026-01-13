@@ -2,7 +2,7 @@
 	{
 		"LineRef": "STIF:Line::C01795:",
 		"LineName": "LightTrain8",
-		"Color": "6E6E00"
+		"Color": "6e6e00"
 	},
 	{
 		"LineRef": "STIF:Line::C01999:",
@@ -10,13 +10,13 @@
 		"Color": "ff5a00"
 	},
 	{
-		"LineRef": "STIF:Line::C01795:",
-		"LineName": "LightTrain8",
-		"Color": "6E6E00"
+		"LineRef": "STIF:Line::C01383:",
+		"LineName": "Subway13",
+		"Color": "82c8e6"
 	},
 	{
-		"LineRef": "STIF:Line::C01999:",
-		"LineName": "LightTrain11",
-		"Color": "ff5a00"
+		"LineRef": "STIF:Line::C01384:",
+		"LineName": "Subway14",
+		"Color": "640082"
 	}
 ]

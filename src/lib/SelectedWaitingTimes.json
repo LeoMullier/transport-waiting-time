@@ -7,7 +7,8 @@
 			"StopName": "Saint-Denis - Porte de Paris",
 			"Destination": "Épinay Villetaneuse",
 			"Color": "6E6E00",
-			"WalkTime": "10"
+			"WalkTime": "10",
+			"ShowDestination": "1"
 		}
 	],
 	"Dynamic": [
@@ -18,7 +19,8 @@
 			"StopName": "Saint-Denis - Porte de Paris",
 			"Destination": "Châtillon",
 			"Color": "82c8e6",
-			"WalkTime": "12"
+			"WalkTime": "12",
+			"ShowDestination": "0"
 		},
 		{
 			"LineRef": "STIF:Line::C01383:",
@@ -27,7 +29,8 @@
 			"StopName": "Saint-Denis - Porte de Paris",
 			"Destination": "Saint-Denis",
 			"Color": "82c8e6",
-			"WalkTime": "12"
+			"WalkTime": "12",
+			"ShowDestination": "0"
 		},
 		{
 			"LineRef": "STIF:Line::C01999:",
@@ -36,7 +39,8 @@
 			"StopName": "Villetaneuse - Université",
 			"Destination": "Le Bourget",
 			"Color": "ff5a00",
-			"WalkTime": "12"
+			"WalkTime": "12",
+			"ShowDestination": "0"
 		},
 		{
 			"LineRef": "STIF:Line::C01384:",
@@ -44,8 +48,9 @@
 			"StopRef": "STIF:StopPoint:Q:490774:",
 			"StopName": "Saint-Denis - Pleyel",
 			"Destination": "Aéroport d'Orly",
-			"Color": "ff5a00",
-			"WalkTime": "25"
+			"Color": "640082",
+			"WalkTime": "25",
+			"ShowDestination": "0"
 		}
 	]
 }
