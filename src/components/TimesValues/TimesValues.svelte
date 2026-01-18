@@ -35,7 +35,7 @@
 			</div>
 		{/if}
 		<div class="ValuesSeparator"></div>
-		{#if Destination?.[0]}
+		{#if Destination?.[1]}
 			<div class="ValueDestination">
 				<div class="Value ValueWithDestination">{Values[1]}</div>
 				<div class="Destination">{Destination[1]}</div>

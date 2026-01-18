@@ -5,9 +5,14 @@
 		"Color": "6e6e00"
 	},
 	{
-		"LineRef": "STIF:Line::C01999:",
-		"LineName": "LightTrain11",
-		"Color": "ff5a00"
+		"LineRef": "STIF:Line::C01743:",
+		"LineName": "RegionalTrainB",
+		"Color": "3c91dc"
+	},
+	{
+		"LineRef": "STIF:Line::C01728:",
+		"LineName": "RegionalTrainD",
+		"Color": "00643c"
 	},
 	{
 		"LineRef": "STIF:Line::C01383:",

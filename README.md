@@ -29,17 +29,16 @@ This project is licensed under the CC BY-NC-SA license. It allows any use of the
 
 The obligations associated with the license are to:
 
-credit the creators as the authors of the original works, indicate the sources, and specify whether modifications have been made (attribution requirement);
-
-not derive profit (direct gain or commercial added value) from the work or from derivative works;
-
-distribute new creations under identical terms (under the same license) as the original work, thereby allowing modifications and prohibiting commercial uses.
+- credit the creators as the authors of the original works, indicate the sources, and specify whether modifications have been made (attribution requirement);
+- not derive profit (direct gain or commercial added value) from the work or from derivative works;
+- distribute new creations under identical terms (under the same license) as the original work, thereby allowing modifications and prohibiting commercial uses.
 
 This license therefore prohibits any derivative works from being exploited for commercial purposes.
 
 # 🚀 Getting Started
 
 ```bash
+npm i
 npm run dev
 ```
 

@@ -4,6 +4,7 @@
 
 	// Import files
 	import IdfmPrimToken from '$lib/IdfmPrimToken.json';
+	import LogoPedestrianTransit from '$lib/assets/LogoPedestrianTransit.svelte';
 
 	// Import components
 	import TimesValues from '../TimesValues/TimesValues.svelte';
@@ -98,7 +99,7 @@
 					alt="Logo of {LineName} transport"
 					class="Icon"
 				/>
-				<img src="/assets/images/LogoPedestrianTransit.svg" alt="Logo of pedestrian" class="Icon" />
+				<LogoPedestrianTransit style="height: 100%; color: #25303b;" />
 				<div class="WalkTime">{WalkTime} min</div>
 			</div>
 		{/if}
